@@ -367,4 +367,6 @@ def craft_tiers():
     return render_template("crafttiers.html", tiers = tiers,
                            is_dev_version = is_dev_version)
 
-app.run(host = "0.0.0.0", port = 8080)
+
+
+app.run(host = "0.0.0.0", port = os.environ["PORT"])
