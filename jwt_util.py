@@ -4,9 +4,9 @@ import os
 
 is_dev_version = "REPL_ID" in os.environ
 
-if not is_dev_version:
-    from dotenv import load_dotenv
-    load_dotenv()
+# if not is_dev_version:
+#     from dotenv import load_dotenv
+#     load_dotenv()
 
 SECRET_KEY = os.environ["jwt_secret"]
 
