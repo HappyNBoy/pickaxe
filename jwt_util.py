@@ -1,4 +1,4 @@
-import jwt
+from jwt import JWT
 import datetime
 import os
 
