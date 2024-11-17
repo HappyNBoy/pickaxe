@@ -1,4 +1,4 @@
-from jwt import JWT
+from jwt import (JWT, ExpiredSignatureError, InvalidTokenError)
 import datetime
 import os
 
@@ -25,9 +25,9 @@ def verify_jwt_token(token):
     try:
         payload = instance.decode(token, SECRET_KEY, algorithms=["HS256"])
         return payload["data"]
-    except jwt.ExpiredSignatureError:
+    except ExpiredSignatureError:
         # Token has expired
         return None
-    except jwt.InvalidTokenError:
+    except InvalidTokenError:
         # Invalid token
         return None
