@@ -11,9 +11,9 @@ import re, hashlib, hmac, os, sys
 
 is_dev_version = "REPL_ID" in os.environ
 
-if not is_dev_version:
-    from dotenv import load_dotenv
-    load_dotenv()
+# if not is_dev_version:
+#     from dotenv import load_dotenv
+#     load_dotenv()
 
 def verify_signature(payload_body, secret_token, signature_header):
     """Verify that the payload was sent from GitHub by validating SHA256.
